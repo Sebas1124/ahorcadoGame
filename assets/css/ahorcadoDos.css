@@ -1,0 +1,153 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+/*-----modal principio-----*/
+
+.intro {
+    position: absolute;
+    width: 50%;
+    height:70vh;
+    text-align: center;
+    padding: 40px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius:10% ;
+    -webkit-border-radius:10% ;
+    -moz-border-radius:10% ;
+    -ms-border-radius:10% ;
+    -o-border-radius:10% ;
+}
+
+.intro input{
+    height:90%;
+    width: 100%;
+}
+
+.intro button{
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid white;
+    width: 200px;
+    background-color: rgb(187, 187, 187);
+    padding: 20px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    cursor: pointer;
+}
+
+/*---------------------- dibujo ahorcado-----------------*/
+section {
+  width: 20%;
+  height: 40%;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 0.4fr 0.5fr 0.4fr 1.3fr;
+}
+
+section div{
+    display: none;
+}
+
+
+
+.celda1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.celda4 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.celda7 {
+  border-left: 5px solid brown;
+}
+
+.celda2 {
+  border-left: 5px solid brown;
+  border-top: 5px solid brown;
+}
+
+.celda3 {
+  border-left: 2px solid black;
+}
+
+.celda5 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  display: none;
+  justify-content: center;
+  align-items: start;
+  border-left: 5px solid brown;
+}
+
+.celda5 span {
+  display: none;
+  border-radius: 50%;
+  height: 98%;
+  width: 25%;
+  border: 1px solid black;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.celda7 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  background-image: url(../images/cuerpo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: 45%;
+}
+/*----------- inputs juego------------*/
+
+#campos{
+height: 140px;
+width: 94%;
+display: flex;
+justify-content: space-around;
+overflow-x: scroll;
+  
+
+}
+
+ #campos input{
+    margin:5px;
+    height:60px;
+    border:1px solid rgb(187, 187, 187);
+    border-radius: 10px;
+    background-color: rgb(249, 243, 196);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/*-------- lista fallos------------------------*/
+
+.errores{
+    padding:14px;
+    width: 40%;
+    border:2px solid black;
+    height: 90px;
+}
