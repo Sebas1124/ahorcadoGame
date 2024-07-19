@@ -28,13 +28,13 @@ botonInicio.addEventListener("click", () => {
 
       console.log('escribiendo')
       for(let i = 0; i < arrayLetras.length; i++){
-        
+
         if( inputsValidate[i].value == arrayLetras[i] ){
 
         inputsValidate[i].textContent = arrayLetras[i]
 
       }else{
-        alert("has fallado")
+        alert("has fallado!!")
       }
 
     }}
