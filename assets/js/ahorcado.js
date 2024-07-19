@@ -201,6 +201,5 @@ startGameBtn.addEventListener('click', () => {
 
     });
 
-
 });
 

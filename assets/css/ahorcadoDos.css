@@ -65,8 +65,6 @@ section div{
     display: none;
 }
 
-
-
 .celda1 {
   grid-column-start: 1;
   grid-column-end: 4;
