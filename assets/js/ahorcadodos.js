@@ -6,10 +6,16 @@ const campos = document.querySelector("#campos");
 botonInicio.addEventListener("click", () => {
   let palabraElegida = inputInicio.value;
 
+  // const regex = /^[a-zA-Z]+$/;
+
+  // if ( regex.test( palabraElegida ) ) {
+  //   alert("Palabra correcta");
+  // }else{
+  //   alert("Solo se permiten caracteres alfabéticos");
+  // }
+
   if (palabraElegida == "") {
     alert("debes introducir una palabra para poder empezar");
-  } else if (isNaN(palabraElegida) == false) {
-    alert("solo se permiten caracteres alfabéticos");
   } else {
     modalInicio.style.display = "none";
   }
