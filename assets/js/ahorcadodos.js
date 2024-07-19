@@ -6,10 +6,16 @@ const campos = document.querySelector("#campos");
 botonInicio.addEventListener("click", () => {
   let palabraElegida = inputInicio.value;
 
+  // const regex = /^[a-zA-Z]+$/;
+
+  // if ( regex.test( palabraElegida ) ) {
+  //   alert("Palabra correcta");
+  // }else{
+  //   alert("Solo se permiten caracteres alfabéticos");
+  // }
+
   if (palabraElegida == "") {
     alert("debes introducir una palabra para poder empezar");
-  } else if (isNaN(palabraElegida) == false) {
-    alert("solo se permiten caracteres alfabéticos");
   } else {
     modalInicio.style.display = "none";
   }
@@ -26,18 +32,21 @@ botonInicio.addEventListener("click", () => {
   for (let i = 0; i < inputsValidate.length; i++) {
     inputsValidate[i].addEventListener("keyup",()=>{
 
-      console.log('escribiendo')
-      for(let i = 0; i < arrayLetras.length; i++){
-
-        if( inputsValidate[i].value == arrayLetras[i] ){
+      console.log({
+        'letra input': inputsValidate[i].value,
+        'letra array': arrayLetras[i]
+      })
+    
+      if( inputsValidate[i].value == arrayLetras[i] ){
 
         inputsValidate[i].textContent = arrayLetras[i]
 
       }else{
+        inputsValidate[i].value = ''
         alert("has fallado!!")
       }
 
-    }}
+    }
 
     );
     
