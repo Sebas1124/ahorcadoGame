@@ -15,24 +15,34 @@ botonInicio.addEventListener("click", () => {
   }
 
   const arrayLetras = palabraElegida.split("");
-  const nuevosInputs = `<input type="text">`;
+  nuevosInputs = `<input class="nuevosInputs" type="text">`;
 
   arrayLetras.forEach(() => {
     campos.insertAdjacentHTML("beforeend", nuevosInputs);
   });
-  return arrayLetras;
+  
+  const inputsValidate = document.getElementsByClassName("nuevosInputs");
+
+  for (let i = 0; i < inputsValidate.length; i++) {
+    inputsValidate[i].addEventListener("keyup",()=>{
+
+      console.log('escribiendo')
+      for(let i = 0; i < arrayLetras.length; i++){
+        
+        if( inputsValidate[i].value == arrayLetras[i] ){
+
+        inputsValidate[i].textContent = arrayLetras[i]
+
+      }else{
+        alert("has fallado")
+      }
+
+    }}
+
+    );
+    
+  }
+    
 });
 
-
-
-nuevosInputs.forEach((input, i)=>{
-  input.addEventListener("change",()=>{
-    for(i=0; i < arrayLetras.length; i++){
-       if(input.value == arrayLetras[i]){
-      input.textContent = arrayLetras[i]
-    }else{
-        alert("has fallado")
-    }
-  }}
-)})
 
