@@ -2,7 +2,7 @@ const modalInicio = document.querySelector(".intro");
 const botonInicio = document.querySelector(".intro button");
 const inputInicio = document.querySelector(".intro form input");
 const campos = document.querySelector("#campos");
-
+let  nuevosInputs; 
 botonInicio.addEventListener("click", () => {
   let palabraElegida = inputInicio.value;
 
@@ -13,26 +13,25 @@ botonInicio.addEventListener("click", () => {
   } else {
     modalInicio.style.display = "none";
   }
-
   const arrayLetras = palabraElegida.split("");
-  const nuevosInputs = `<input type="text">`;
-
-  arrayLetras.forEach(() => {
+   nuevosInputs = `<input type="text">`;
+   arrayLetras.forEach(() => {
     campos.insertAdjacentHTML("beforeend", nuevosInputs);
   });
-  return arrayLetras;
-});
 
+  const inputsValidate = document.getElementsByClassName("nuevosInputs")
 
-
-nuevosInputs.forEach((input, i)=>{
-  input.addEventListener("change",()=>{
-    for(i=0; i < arrayLetras.length; i++){
-       if(input.value == arrayLetras[i]){
-      input.textContent = arrayLetras[i]
+  inputsValidate.forEach((input, i)=>{
+  input.addEventListener("keyup",()=>{
+    for(i=0; i < inputsValidate.length; i++){
+       if(input.value == inputsValidate[i]){
+      input.textContent = inputsValidate[i]
     }else{
         alert("has fallado")
     }
   }}
 )})
+});
+
+
 
