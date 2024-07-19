@@ -26,18 +26,21 @@ botonInicio.addEventListener("click", () => {
   for (let i = 0; i < inputsValidate.length; i++) {
     inputsValidate[i].addEventListener("keyup",()=>{
 
-      console.log('escribiendo')
-      for(let i = 0; i < arrayLetras.length; i++){
-
-        if( inputsValidate[i].value == arrayLetras[i] ){
+      console.log({
+        'letra input': inputsValidate[i].value,
+        'letra array': arrayLetras[i]
+      })
+    
+      if( inputsValidate[i].value == arrayLetras[i] ){
 
         inputsValidate[i].textContent = arrayLetras[i]
 
       }else{
+        inputsValidate[i].value = ''
         alert("has fallado!!")
       }
 
-    }}
+    }
 
     );
     
