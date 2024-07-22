@@ -24,10 +24,12 @@ botonInicio.addEventListener("click", () => {
     campos.insertAdjacentHTML("beforeend", nuevosInputs);
   });
   
-  const inputsValidate = document.getElementsByClassName("nuevosInputs");
+
+  const inputsValidate = document.getElementsByClassName("nuevosInputs"); 
+   letras = document.createElement("p")
   const arrayErroneos = []
   const contenido = arrayErroneos.toString()
-  const letras = document.createElement("p")
+  letras.textContent(contenido)
   
   for (let i = 0; i < inputsValidate.length; i++) {
     inputsValidate[i].addEventListener("keyup", () => {
@@ -35,10 +37,8 @@ botonInicio.addEventListener("click", () => {
         inputsValidate[i].textContent = arrayLetras[i];
       } else {
       arrayErroneos.push(inputsValidate[i].value)
-      letras.textContent(contenido)
       erroneos.append(letras)
- 
-      }
+     }
     });
   }
 });
