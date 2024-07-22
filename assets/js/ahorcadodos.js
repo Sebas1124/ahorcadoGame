@@ -2,18 +2,21 @@ const modalInicio = document.querySelector(".intro");
 const botonInicio = document.querySelector(".intro button");
 const inputInicio = document.querySelector(".intro form input");
 const campos = document.querySelector("#campos");
-let  nuevosInputs; 
+let nuevosInputs;
+const erroneos = document.querySelector(".errores")
+
 
 botonInicio.addEventListener("click", () => {
   let palabraElegida = inputInicio.value;
 
-  if (palabraElegida == "") {
-    alert("debes introducir una palabra para poder empezar");
-  } else if (isNaN(palabraElegida) == false) {
-    alert("solo se permiten caracteres alfabéticos");
-  } else {
+  const regex = /^[a-zA-Z]+$/;
+
+  if (regex.test(palabraElegida)) {
     modalInicio.style.display = "none";
+  } else {
+    alert("solo se permiten caracteres alfabéticos");
   }
+
   const arrayLetras = palabraElegida.split("");
   nuevosInputs = `<input class="nuevosInputs" type="text">`;
 
@@ -22,22 +25,20 @@ botonInicio.addEventListener("click", () => {
   });
   
   const inputsValidate = document.getElementsByClassName("nuevosInputs");
-
+  const arrayErroneos = []
+  const contenido = arrayErroneos.toString()
+  const letras = document.createElement("p")
+  
   for (let i = 0; i < inputsValidate.length; i++) {
-    inputsValidate[i].addEventListener("keyup",()=>{
-
-
-      if( inputsValidate[i].value == arrayLetras[i] ){
-
-        inputsValidate[i].textContent = arrayLetras[i]
-
-      }else{
-        alert("has fallado!!")
+    inputsValidate[i].addEventListener("keyup", () => {
+     if (inputsValidate[i].value == arrayLetras[i]) {
+        inputsValidate[i].textContent = arrayLetras[i];
+      } else {
+      arrayErroneos.push(inputsValidate[i].value)
+      letras.textContent(contenido)
+      erroneos.append(letras)
+      inputsValidate[i].value = ""; 
       }
-   }
-   );
-    }
-  });
-
-
-
+    });
+  }
+});
