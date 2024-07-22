@@ -26,7 +26,7 @@ botonInicio.addEventListener("click", () => {
   
   const inputsValidate = document.getElementsByClassName("nuevosInputs");
   const arrayErroneos = []
-
+  const contenido = arrayErroneos.toString()
   const letras = document.createElement("p")
   
   for (let i = 0; i < inputsValidate.length; i++) {
@@ -34,8 +34,7 @@ botonInicio.addEventListener("click", () => {
      if (inputsValidate[i].value == arrayLetras[i]) {
         inputsValidate[i].textContent = arrayLetras[i];
       } else {
-      arrayErroneos.push(inputsValidate[i].value)  
-      const contenido = arrayErroneos.toString()
+      arrayErroneos.push(inputsValidate[i].value)
       letras.textContent(contenido)
       erroneos.append(letras)
  
