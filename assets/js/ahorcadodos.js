@@ -39,11 +39,9 @@ botonInicio.addEventListener("click", () => {
       } else {
       arrayErroneos.push(inputsValidate[i].value)
       erroneos.innerHTML = contenido 
-      switch(arrayErroneos){
-       arrayErroneos.length == arrayLetras.length:
-       
+     
       
-      }
+      
      }
   
     });
