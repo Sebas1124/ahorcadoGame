@@ -4,11 +4,11 @@ const inputInicio = document.querySelector(".intro form input");
 const campos = document.querySelector("#campos");
 let nuevosInputs;
 const erroneos = document.querySelector(".errores")
+const divs = document.querySelectorAll("setion div")
 
 
 botonInicio.addEventListener("click", () => {
   let palabraElegida = inputInicio.value;
-
   const regex = /^[a-zA-Z]+$/;
 
   if (regex.test(palabraElegida)) {
@@ -25,11 +25,12 @@ botonInicio.addEventListener("click", () => {
   });
   
 
+
   const inputsValidate = document.getElementsByClassName("nuevosInputs"); 
-   letras = document.createElement("p")
+  letras = document.createElement("p")
   const arrayErroneos = []
-  const contenido = arrayErroneos.toString()
-  letras.textContent(contenido)
+  const contenido = arrayErroneos
+
   
   for (let i = 0; i < inputsValidate.length; i++) {
     inputsValidate[i].addEventListener("keyup", () => {
@@ -37,8 +38,14 @@ botonInicio.addEventListener("click", () => {
         inputsValidate[i].textContent = arrayLetras[i];
       } else {
       arrayErroneos.push(inputsValidate[i].value)
-      erroneos.append(letras)
+      erroneos.innerHTML = contenido 
+      switch(arrayErroneos){
+       arrayErroneos.length == arrayLetras.length:
+       
+      
+      }
      }
+  
     });
   }
 });
