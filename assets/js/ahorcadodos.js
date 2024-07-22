@@ -4,8 +4,12 @@ const inputInicio = document.querySelector(".intro form input");
 const campos      = document.querySelector("#campos");
 let nuevosInputs;
 const erroneos    = document.querySelector(".errores")
-const divs        = document.querySelectorAll("setion div")
+const divs        = document.getElementsByClassName("ahorcado")
 const intentos    = document.getElementById("intentos")
+
+for (let i = 0; i < divs.length; i++) {
+  divs[i].style.display = "none";
+}
 
 // Declarar variables globales
 let intento = 0;
@@ -61,15 +65,26 @@ botonInicio.addEventListener("click", () => {
     break;
   }
 
-  const generateDivsWithAhorcado = ( maxIntentos, intentoActual ) => {
+  const generateDivsWithAhorcado = ( maxIntentos, intentoActual, hasPerdido ) => {
 
     for (let i = 0; i < divs.length; i++) {
       
-      if( intentoActual < maxIntentos ) {
+      if( hasPerdido ) {
         divs[i].style.display = "flex";
+        console.log(divs[i])
       }
       
     }
+
+    if ( maxIntentos <= 7 ) {
+      
+      for (let i = intento; i < 2; i++) {
+        divs[i].style.display = "flex";
+      }
+
+
+    }
+
 
   }
   
@@ -85,7 +100,7 @@ botonInicio.addEventListener("click", () => {
 
       if ( intento >= maxIntentos ) {
         alert("Has perdido");
-        generateDivsWithAhorcado( maxIntentos, intento )
+        generateDivsWithAhorcado( maxIntentos, intento, true )
         // propiedades de la web
         // location.reload();
         return;

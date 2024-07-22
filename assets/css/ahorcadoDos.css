@@ -61,9 +61,6 @@ section {
   grid-template-rows: 0.4fr 0.5fr 0.4fr 1.3fr;
 }
 
-section div{
-    display: none;
-}
 
 .celda1 {
   grid-column-start: 1;
