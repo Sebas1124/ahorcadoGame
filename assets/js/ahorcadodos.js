@@ -3,8 +3,23 @@ const botonInicio = document.querySelector(".intro button");
 const inputInicio = document.querySelector(".intro form input");
 const campos      = document.querySelector("#campos");
 let nuevosInputs;
-const erroneos = document.querySelector(".errores")
-const divs = document.querySelectorAll("setion div")
+const erroneos    = document.querySelector(".errores")
+const divs        = document.getElementsByClassName("ahorcado")
+const intentos    = document.getElementById("intentos")
+
+for (let i = 0; i < divs.length; i++) {
+  divs[i].style.display = "none";
+}
+
+// Declarar variables globales
+let intento = 0;
+let maxIntentos = 6;
+
+//TODO: Ruta de correcciones
+
+// Implementar la funcionalidad de los intentos del usuario checked
+// validar los inputs para que no ingresen numero o caracteres especiales
+// validar si el valor conicide con algún otro input y no marcarlo como si fuera respuesta erronea
 
 
 botonInicio.addEventListener("click", () => {
@@ -50,33 +65,29 @@ botonInicio.addEventListener("click", () => {
       break;
   }
 
-  const generateDivsWithAhorcado = (maxIntentos, intentoActual) => {
+  const generateDivsWithAhorcado = ( maxIntentos, intentoActual, hasPerdido ) => {
+
     for (let i = 0; i < divs.length; i++) {
-      if (intentoActual < maxIntentos) {
+      
+      if( hasPerdido ) {
         divs[i].style.display = "flex";
+        console.log(divs[i])
       }
     }
   };
 
-  const inputsValidate = document.getElementsByClassName("nuevosInputs");
-  letras = document.createElement("p");
-  const arrayErroneos = [];
-  const contenido = arrayErroneos;
-
-  for (let i = 0; i < inputsValidate.length; i++) {
-    inputsValidate[i].addEventListener("keyup", () => {
-     if (inputsValidate[i].value == arrayLetras[i]) {
-        inputsValidate[i].textContent = arrayLetras[i];
-      } else {
-      arrayErroneos.push(inputsValidate[i].value)
-      erroneos.innerHTML = contenido 
-      switch(arrayErroneos){
-       arrayErroneos.length == arrayLetras.length:
-       
+    if ( maxIntentos <= 7 ) {
       
+      for (let i = intento; i < 2; i++) {
+        divs[i].style.display = "flex";
       }
-     }
-  
-    });
+
+
+    }
+
+
   }
-});
+  
+
+
+
