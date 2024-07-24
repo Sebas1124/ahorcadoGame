@@ -13,7 +13,7 @@ divs.forEach((div) => {
 // Declarar variables globales
 let intento = 0;
 let maxIntentos = 6;
-let horca = 8;
+let horca = 12;
 
 // Implementar la funcionalidad de los intentos del usuario
 // Validar los inputs para que no ingresen números o caracteres especiales
