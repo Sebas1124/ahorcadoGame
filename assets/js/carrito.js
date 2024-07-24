@@ -1,1 +1,4 @@
-alert('carrito.js');
+
+
+
+alert('carritoFinalizado.js');
