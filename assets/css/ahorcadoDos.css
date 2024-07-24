@@ -61,6 +61,13 @@ section {
   grid-template-rows: 0.4fr 0.5fr 0.4fr 1.3fr;
 }
 
+.intentos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 
 .celda1 {
   grid-column-start: 1;
@@ -88,14 +95,14 @@ section {
 .celda5 {
   grid-column-start: 2;
   grid-column-end: 4;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: start;
   border-left: 5px solid brown;
 }
 
 .celda5 span {
-  display: none;
+  display: flex;
   border-radius: 50%;
   height: 98%;
   width: 25%;
