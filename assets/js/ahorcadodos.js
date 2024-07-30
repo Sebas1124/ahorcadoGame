@@ -7,13 +7,13 @@ const erroneos = document.querySelector(".errores");
 const divs = document.querySelectorAll("section div");
 const intentos = document.getElementById("intentos");
 divs.forEach((div) => {
-  div.style.display = "none";
+  div.style.opacity = "0";
 });
 
 // Declarar variables globales
 let intento = 0;
 let maxIntentos = 6;
-let horca = 12;
+let horca = 8;
 
 // Implementar la funcionalidad de los intentos del usuario
 // Validar los inputs para que no ingresen números o caracteres especiales
@@ -37,33 +37,32 @@ botonInicio.addEventListener("click", () => {
   });
 
   const inputsValidate = document.getElementsByClassName("nuevosInputs");
-  const letras = document.createElement("p");
   const arrayErroneos = [];
   const contenido = arrayErroneos;
 
   function dibujarAhorcado() {
     if (horca % 2 !== 0 || horca === 2) {
-      divs[horca].style.display = "flex";
+      divs[horca].style.opacity = "1";
     } else {
-      divs[horca].style.display = "none";
+      divs[horca].style.display = "0";
     }
   }
 
   function comprobarArray(a){
-    for(let j = 0; j < arrayLetras.length; j++){
-      if (a == arrayLetras[j]){
-        inputsValidate[j].value = a;
-      } else {
+    if(arrayLetras.forEach((letra,k)=>{
+         if(letra == a){
+          inputsValidate[k].value = a;
+         }else{
         arrayErroneos.push(a);
         erroneos.innerHTML = contenido;
         intento++;
         horca--;
         intentos.innerHTML = ` ${intento}/${maxIntentos}`;
         dibujarAhorcado()
-       } 
-     };
-  }
-
+         }
+        })) 
+        
+        
   for (let i = 0; i < inputsValidate.length; i++) {
     
     inputsValidate[i].addEventListener("keyup", () => {
@@ -79,7 +78,7 @@ botonInicio.addEventListener("click", () => {
       } else if (regex.test(inputsValidate[i].value) && intento >= maxIntentos) {
        
         divs.forEach((div) => {
-          div.style.display = "flex";
+          div.style.opacity = "1";
         });
        
         alert("has perdido");
@@ -89,7 +88,7 @@ botonInicio.addEventListener("click", () => {
       }
     });
   }
-});
+}});
 
 
 
